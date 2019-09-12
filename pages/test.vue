@@ -5,7 +5,7 @@
 <script>
 export default {
   name: '',
-  layout: 'blog-header',
+  layout: '',
   data () {
     return {
     }

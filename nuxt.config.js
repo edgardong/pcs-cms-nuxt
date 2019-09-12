@@ -34,7 +34,8 @@ module.exports = {
    ** Global CSS
    */
   css: [
-    'ant-design-vue/dist/antd.css'
+    'ant-design-vue/dist/antd.css',
+    '~/assets/web.css'
   ],
   /*
    ** Plugins to load before mounting the App
@@ -60,7 +61,18 @@ module.exports = {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    proxy: true
+  },
+  proxy: {
+    '/api': {
+      target: 'http://localhost:8000', // 代理地址
+      changeOrigin: true,
+      pathRewrite: {
+        '^/api': '/api'
+      },
+    },
+  },
   /*
    ** Build configuration
    */

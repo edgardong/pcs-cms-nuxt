@@ -1,32 +1,24 @@
-html, body {
-  background: #f7f7f7;
+<template>
+  <div>
+    <wec-header />
+    <nuxt />
+  </div>
+</template>
+<script>
+import WecHeader from '~/components/WecHeader'
+export default {
+  components: {
+    WecHeader
+  }
 }
-
+</script>
+<style>
 .wec-header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 999;
 }
-
-.wec-max__width {
-  max-width: 960px;
-  width: 100%;
-  margin: 0 auto;
-  background-color: #fff;
-}
-
-.wec-container {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 60px;
-  width: 100%;
-  margin: 0 auto 0 auto;
-}
-
 .ant-menu-item {
   padding: 0 30px !important;
 }
@@ -36,3 +28,4 @@ html, body {
 .ant-menu-horizontal > .ant-menu-item-selected {
   border-bottom: 0px !important;
 }
+</style>

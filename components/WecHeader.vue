@@ -4,12 +4,16 @@
       <div class="wec-logo">
         <img src="~/assets/imgs/logo.png" class="wec-logo_img" alt="logo">
       </div>
-      <a-menu class="wec-menu" v-model="current" mode="horizontal">
+      <a-menu v-model="current" class="wec-menu" mode="horizontal" @click="handleMenuClick">
         <a-menu-item key="main">
-          <a-icon type="home" />首页
+          <nuxt-link to="/">
+            <a-icon type="home" />首页
+          </nuxt-link>
         </a-menu-item>
         <a-menu-item key="feeling">
-          <a-icon type="smile" />随笔
+          <nuxt-link to="/test">
+            <a-icon type="smile" />随笔
+          </nuxt-link>
         </a-menu-item>
         <a-menu-item key="album">
           <a-icon type="instagram" theme="filled" />相册
@@ -37,7 +41,7 @@
             </a-menu-item>
           </a-menu-item-group>
         </a-sub-menu>
-        <a-menu-item key="alipay">
+        <a-menu-item key="sharing">
           <a-icon type="share-alt" />分享
         </a-menu-item>
       </a-menu>
@@ -46,12 +50,30 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
 export default {
   name: 'WecHeader',
   data () {
     return {
-      current: ['main']
     }
+  },
+  computed: {
+    current: {
+      get () {
+        return [this.$store.state.menu.index]
+      },
+      set (value) {
+
+      }
+    }
+  },
+  methods: {
+    handleMenuClick (e) {
+      this.$store.commit('menu/setIndex', e.key)
+    },
+    ...mapMutations({
+      setIndex: 'menu/setIndex'
+    })
   }
 }
 </script>
@@ -62,10 +84,10 @@ export default {
   top: 0;
   left: 0;
   right: 0;
-  padding: 6px 0;
   border-bottom: 1px solid #e8e8e8;
   display: flex;
   align-items: center;
+  background-color: #fff;
 }
 
 .wec-header .header-container {
@@ -75,6 +97,7 @@ export default {
   max-width: 960px;
   width: 100%;
   margin: 0 auto;
+  padding: 6px 0;
 }
 
 .wec-menu {
