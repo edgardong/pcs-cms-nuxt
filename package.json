@@ -14,10 +14,12 @@
     "test": "jest"
   },
   "dependencies": {
-    "nuxt": "^2.0.0",
+    "ant-design-vue": "^1.1.10",
     "cross-env": "^5.2.0",
+    "highlight.js": "^9.15.10",
     "koa": "^2.6.2",
-    "ant-design-vue": "^1.1.10"
+    "markdown-it": "^10.0.0",
+    "nuxt": "^2.0.0"
   },
   "devDependencies": {
     "@nuxtjs/axios": "^5.6.0",
@@ -28,6 +30,9 @@
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.1.0",
     "eslint": "^6.1.0",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-loader": "^3.0.0",
+    "eslint-plugin-html": "^6.0.0",
     "eslint-plugin-nuxt": ">=0.4.2",
     "jest": "^24.1.0",
     "nodemon": "^1.18.9",

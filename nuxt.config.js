@@ -70,8 +70,8 @@ module.exports = {
       changeOrigin: true,
       pathRewrite: {
         '^/api': '/api'
-      },
-    },
+      }
+    }
   },
   /*
    ** Build configuration
