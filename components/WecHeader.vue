@@ -2,7 +2,7 @@
   <div class="wec-header">
     <div class="header-container">
       <div class="wec-logo">
-        <img src="~/assets/imgs/logo.png" class="wec-logo_img" alt="logo">
+        <img :src="$store.state.base.logo" class="wec-logo_img" alt="logo">
       </div>
       <a-menu v-model="current" class="wec-menu" mode="horizontal" @click="handleMenuClick">
         <a-menu-item key="main">
@@ -43,6 +43,16 @@
         </a-sub-menu>
         <a-menu-item key="sharing">
           <a-icon type="share-alt" />分享
+        </a-menu-item>
+        <a-menu-item key="tools">
+          <a href="http://tools.quzhaota.cn/" target="_blank">
+            <a-icon type="tool" />工具
+          </a>
+        </a-menu-item>
+        <a-menu-item key="sitemap">
+          <a href="/sitemap.xml">
+            <a-icon type="deployment-unit" />地图
+          </a>
         </a-menu-item>
       </a-menu>
     </div>

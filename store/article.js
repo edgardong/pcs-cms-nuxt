@@ -4,6 +4,6 @@ export const state = () => ({
 
 export const mutations = {
   setArticle (state, data) {
-    state.list = data
+    state.list = data.data
   }
 }
