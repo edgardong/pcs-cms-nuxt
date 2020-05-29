@@ -42,7 +42,8 @@ html, body {
 
 .wec-container {
   position: absolute;
-  bottom: 0;
+  bottom: 100px;
+  overflow-y: scroll;
   left: 0;
   right: 0;
   top: 60px;

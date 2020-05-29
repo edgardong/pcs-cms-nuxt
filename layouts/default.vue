@@ -4,13 +4,16 @@
     <div class="wec-container">
       <nuxt />
     </div>
+    <wec-footer />
   </div>
 </template>
 <script>
 import WecHeader from '~/components/WecHeader'
+import WecFooter from '~/components/WecFooter'
 export default {
   components: {
-    WecHeader
+    WecHeader,
+    WecFooter
   }
 }
 </script>

@@ -12,6 +12,7 @@
 import axios from 'axios'
 import hljs from 'highlight.js'
 import '~/assets/markdown.css'
+// import 'highlight.js/styles/default.css'
 import WecSlider from '~/components/WecSlider'
 export default {
   components: {
@@ -30,7 +31,11 @@ export default {
     return {
       title: this.article.title + '|' + base.name + base.split + base.title,
       meta: [
-        { hid: 'description', name: 'description', content: this.article.description },
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.article.description
+        },
         { hid: 'keywords', name: 'keywords', content: this.article.keywords }
       ],
       link: [
@@ -93,6 +98,7 @@ export default {
       // 生成目录树
       this.$nextTick(() => {
         this.renderArticleMenu(this.articleContent)
+        hljs.initHighlightingOnLoad()
       })
     },
     /**

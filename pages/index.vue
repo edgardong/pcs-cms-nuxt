@@ -171,7 +171,7 @@ export default {
 }
 .main-container {
   height: calc(100% - 55px);
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  /* box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); */
   margin-top: 55px;
 }
 .main-category {
@@ -207,7 +207,7 @@ export default {
   margin-bottom: 15px;
 }
 
-.tag {
+.main-tags .tag {
   display: inline-block;
   padding: 2px 6px;
   margin-right: 15px;
@@ -255,9 +255,7 @@ export default {
   color: #666;
   font-size: 14px;
 }
-.author i {
-  font-size: 12px;
-}
+.author,.read_count {font-size: 14px;}
 
 .empty_remark {
   color: #666666;

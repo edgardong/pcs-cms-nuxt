@@ -4,8 +4,10 @@
       <div class="title">
         简介
       </div>
-      <div class="content">
-        说点什么好呢？还真的不知道说点什么好，哎，，，，，那就不说了吧
+      <div
+        class="content"
+      >
+        本博客系统使用vue + next + koa2 + mysql搭建，由于本人不太勤快，所以历经九九八十一难终于出来第一版，目前仅有博客/作品/地图模块可使用，其他随笔/相册/分享等功能模块还在开发中。如果有什么问题，欢迎大家来稍扰哦～
       </div>
     </div>
     <div class="item">
@@ -13,7 +15,7 @@
         🎖️作者榜
       </div>
       <div class="content">
-        说点什么好呢？
+        系统管理员
       </div>
     </div>
     <ul v-if="menus.length>0" class="item menu">
@@ -60,7 +62,7 @@ export default {
 
 .item {
   background-color: #fff;
-  padding: 0 15px;
+  padding: 0 15px 15px 15px;
   margin-bottom: 20px;
 }
 .item .title {
@@ -74,6 +76,13 @@ export default {
 .item .content {
   font-size: 14px;
   color: #666;
+  letter-spacing: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3; /*要显示的行数*/
+  -webkit-box-orient: vertical;
+  margin-top: 6px;
 }
 .item.menu {
   padding: 15px;

@@ -1,8 +1,9 @@
 <template>
   <div class="wec-header">
     <div class="header-container">
-      <div class="wec-logo">
-        <img :src="$store.state.base.logo" class="wec-logo_img" alt="logo">
+      <div class="wec-logo" @click="handleIndexClick">
+        <img v-if="$store.state.base" :src="$store.state.base.logo" class="wec-logo_img" alt="logo">
+        <img v-else src="~/assets/imgs/logo.png" class="wec-logo_img" alt="logo">
       </div>
       <a-menu v-model="current" class="wec-menu" mode="horizontal" @click="handleMenuClick">
         <a-menu-item key="main">
@@ -78,6 +79,9 @@ export default {
     }
   },
   methods: {
+    handleIndexClick () {
+      location.href = '/'
+    },
     handleMenuClick (e) {
       this.$store.commit('menu/setIndex', e.key)
     },
@@ -122,5 +126,6 @@ export default {
 .wec-logo_img {
   width: 90px;
   height: 30px;
+  cursor: pointer;
 }
 </style>
