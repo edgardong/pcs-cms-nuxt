@@ -59,6 +59,16 @@
         <div v-else class="empty_remark">
           暂时没有找到您想看的信息呢，休息一下在看看其他的吧～
         </div>
+
+        <div class="pagination-box">
+           <a-pagination
+           size="small"
+           :current="$store.state.article.pageInfo.page"
+           :total="$store.state.article.pageInfo.total"
+           @change="handlePageChange"
+           :pageSize="$store.state.article.pageInfo.size"
+           :show-total=" total => `共 ${$store.state.article.pageInfo.total} 项`" />
+        </div>
       </div>
       <wec-slider />
     </div>
@@ -67,6 +77,8 @@
 
 <script>
 import axios from 'axios'
+// import '@/node_modules/ant-design-vue/lib/icon/style/index.css'
+// import '@/node_modules/ant-design-vue/lib/pagination/style/index.css'
 import WecSlider from '~/components/WecSlider'
 export default {
   components: {
@@ -104,11 +116,7 @@ export default {
     }
   },
   async fetch ({ store, params }) {
-    const { data } = await axios.get(
-      'http://localhost:8000/api/blog/v1/article/pagination'
-    )
-    store.commit('article/setArticle', data.data)
-
+    store.dispatch('article/getArticleList')
     // 获取网站基本信息
     const baseData = await axios.get(
       'http://localhost:8000/api/blog/v1/base/base'
@@ -116,6 +124,9 @@ export default {
     store.commit('setBase', baseData.data.data)
   },
   methods: {
+    handlePageChange (pageIndex) {
+      this.$store.dispatch('article/getArticleList', pageIndex)
+    },
     /**
      * 查看文章详情
      **/
@@ -168,6 +179,7 @@ export default {
   top: 60px;
   left: 0;
   right: 0;
+  z-index: 999;
 }
 .main-container {
   height: calc(100% - 55px);
@@ -246,7 +258,11 @@ export default {
   color: #333;
   font-weight: 500;
   font-size: 16px;
+  margin-bottom: 10px;
   cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .page .title:hover {
   color: #1890ff;
@@ -255,7 +271,7 @@ export default {
   color: #666;
   font-size: 14px;
 }
-.author,.read_count {font-size: 14px;}
+.author,.read_count {font-size: 14px;margin-left: 10px;}
 
 .empty_remark {
   color: #666666;

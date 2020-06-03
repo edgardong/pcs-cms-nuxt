@@ -62,6 +62,8 @@
 
 <script>
 import { mapMutations } from 'vuex'
+// import '@/node_modules/ant-design-vue/lib/menu/style/index.css'
+// import '@/node_modules/ant-design-vue/lib/icon/style/index.css'
 export default {
   name: 'WecHeader',
   data () {

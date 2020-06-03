@@ -42,7 +42,7 @@ html, body {
 
 .wec-container {
   position: absolute;
-  bottom: 100px;
+  bottom: 70px;
   overflow-y: scroll;
   left: 0;
   right: 0;

@@ -4,7 +4,7 @@
       <h1>{{ article.title }}</h1>
       <p ref="article" v-html="articleContent" />
     </div>
-    <wec-slider :menus="menuList" @menu="handleMenuClick" />
+    <wec-slider :type="2" :menus="menuList" @menu="handleMenuClick" />
   </div>
 </template>
 
