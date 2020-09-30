@@ -47,7 +47,7 @@
             <span class="time">{{ article.create_time }}</span>
             <span class="author">
               <a-icon type="user" />
-              {{ article.author||'系统管理员' }}
+              {{ article.author||'不再做书生' }}
             </span>
             <span class="read_count">
               <a-icon type="eye" />
@@ -61,13 +61,14 @@
         </div>
 
         <div class="pagination-box">
-           <a-pagination
-           size="small"
-           :current="$store.state.article.pageInfo.page"
-           :total="$store.state.article.pageInfo.total"
-           @change="handlePageChange"
-           :pageSize="$store.state.article.pageInfo.size"
-           :show-total=" total => `共 ${$store.state.article.pageInfo.total} 项`" />
+          <a-pagination
+            size="small"
+            :current="$store.state.article.pageInfo.page"
+            :total="$store.state.article.pageInfo.total"
+            :page-size="$store.state.article.pageInfo.size"
+            :show-total=" total => `共 ${$store.state.article.pageInfo.total} 项`"
+            @change="handlePageChange"
+          />
         </div>
       </div>
       <wec-slider />
@@ -77,6 +78,7 @@
 
 <script>
 import axios from 'axios'
+import { getArticleList } from '~/api/article'
 // import '@/node_modules/ant-design-vue/lib/icon/style/index.css'
 // import '@/node_modules/ant-design-vue/lib/pagination/style/index.css'
 import WecSlider from '~/components/WecSlider'
@@ -88,15 +90,14 @@ export default {
     return {
       tags: [],
       topCategory: '',
-      category: ''
+      category: '',
+      latest: []
     }
   },
-  asyncData ({ params }) {
-    return axios
-      .get('http://localhost:8000/api/blog/v1/category/')
-      .then((resp) => {
-        return { categorys: resp.data }
-      })
+  async asyncData ({ app, params }) {
+    const { data: categorys } = await app.$axios.get('api/blog/v1/category/')
+
+    return { categorys }
   },
   head () {
     const base = this.$store.state.base
@@ -162,10 +163,7 @@ export default {
     },
     async getCagtegoryList () {
       const category = this.category || this.topCategory || ''
-      const { data } = await axios.get(
-        'http://localhost:8000/api/blog/v1/article/list?category=' + category
-      )
-
+      const { data } = await getArticleList({ category })
       this.$store.commit('article/setArticle', data.data)
     }
   }
@@ -182,7 +180,7 @@ export default {
   z-index: 999;
 }
 .main-container {
-  height: calc(100% - 55px);
+  height: calc(100vh - 55px);
   /* box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); */
   margin-top: 55px;
 }

@@ -4,7 +4,7 @@
       <h1>{{ article.title }}</h1>
       <p ref="article" v-html="articleContent" />
     </div>
-    <wec-slider :type="2" :menus="menuList" @menu="handleMenuClick" />
+    <wec-slider v-if="shwoSlide" :category="articleCategory" :type="2" :menus="menuList" @menu="handleMenuClick" />
   </div>
 </template>
 
@@ -21,8 +21,10 @@ export default {
   data () {
     return {
       id: '',
+      shwoSlide: false,
       article: {},
       articleContent: '',
+      articleCategory: '',
       menuList: []
     }
   },
@@ -95,6 +97,12 @@ export default {
       } else {
         this.articleContent = data.content
       }
+
+      const CATE = data.categorys.split(',').join(data.half_categorys.split(','))
+      const index = Math.ceil(Math.random() * 10) % CATE.length
+      console.log('...CATE', CATE, index, CATE[index])
+      this.articleCategory = CATE[index]
+      this.shwoSlide = true
       // 生成目录树
       this.$nextTick(() => {
         this.renderArticleMenu(this.articleContent)

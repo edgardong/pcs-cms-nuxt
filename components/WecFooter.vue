@@ -1,7 +1,7 @@
 <template>
   <div class="wec-footer">
-    <p class="footer-content" v-html="$store.state.base.footer"></p>
-    <div class="bg-cover"></div>
+    <p class="footer-content" v-html="$store.state.base.footer" />
+    <div class="bg-cover" />
   </div>
 </template>
 <script>
@@ -14,10 +14,10 @@ export default {
     const base = this.$store.state.base
     // 百度统计代码
     if (base && base.baidu_tongji) {
-      // const hm = document.createElement('script')
-      // hm.src = `https://hm.baidu.com/hm.js?${base.baidu_tongji}`
-      // const s = document.getElementsByTagName('script')[0]
-      // s.parentNode.insertBefore(hm, s)
+      const hm = document.createElement('script')
+      hm.src = `https://hm.baidu.com/hm.js?${base.baidu_tongji}`
+      const s = document.getElementsByTagName('script')[0]
+      s.parentNode.insertBefore(hm, s)
     }
   },
   methods: {}
@@ -25,10 +25,10 @@ export default {
 </script>
 <style>
 .wec-footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  position: relative;
+  /* bottom: 0; */
+  /* left: 0; */
+  /* right: 0; */
   z-index: 1;
   height: 60px;
   text-align: center;

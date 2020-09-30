@@ -50,6 +50,11 @@
             <a-icon type="tool" />工具
           </a>
         </a-menu-item>
+        <a-menu-item key="about">
+          <a href="/about">
+            <a-icon type="deployment-unit" />关于
+          </a>
+        </a-menu-item>
         <a-menu-item key="sitemap">
           <a href="/sitemap.xml">
             <a-icon type="deployment-unit" />地图

@@ -41,14 +41,14 @@ html, body {
 }
 
 .wec-container {
-  position: absolute;
-  bottom: 70px;
+  /* position: absolute; */
+  /* bottom: 70px; */
   overflow-y: scroll;
   left: 0;
   right: 0;
-  top: 60px;
   width: 100%;
   margin: 0 auto 0 auto;
+  margin-top: 60px;
 }
 .wec-menu.ant-menu li {margin: 0;}
 .ant-menu-item {
