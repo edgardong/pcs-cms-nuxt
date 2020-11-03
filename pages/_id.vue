@@ -10,8 +10,8 @@
 
 <script>
 import axios from 'axios'
-import config from '~/config'
 import hljs from 'highlight.js'
+import config from '~/config'
 import '~/assets/markdown.css'
 // import 'highlight.js/styles/default.css'
 import WecSlider from '~/components/WecSlider'
@@ -78,7 +78,7 @@ export default {
      **/
     async getArticle (id) {
       const { data } = await axios.get(
-        `${config.BASE_URL}api/blog/v1/article/${id}`
+          `${config.BASE_URL}api/blog/v1/article/${id}`
       )
       this.article = data
       console.log('文章数据', data)
@@ -101,7 +101,7 @@ export default {
 
       const CATE = data.categorys.split(',').join(data.half_categorys.split(','))
       const index = Math.ceil(Math.random() * 10) % CATE.length
-      console.log('...CATE', CATE, index, CATE[index])
+      // console.log('...CATE', CATE, index, CATE[index])
       this.articleCategory = CATE[index]
       this.shwoSlide = true
       // 生成目录树

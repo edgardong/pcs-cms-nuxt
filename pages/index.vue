@@ -78,6 +78,7 @@
 
 <script>
 import axios from 'axios'
+import config from '~/config'
 import { getArticleList } from '~/api/article'
 // import '@/node_modules/ant-design-vue/lib/icon/style/index.css'
 // import '@/node_modules/ant-design-vue/lib/pagination/style/index.css'
@@ -120,7 +121,7 @@ export default {
     store.dispatch('article/getArticleList')
     // 获取网站基本信息
     const baseData = await axios.get(
-      'http://localhost:8000/api/blog/v1/base/base'
+      `${config.BASE_URL}api/blog/v1/base/base`
     )
     store.commit('setBase', baseData.data.data)
   },
@@ -132,7 +133,7 @@ export default {
      * 查看文章详情
      **/
     handleArticleDetail (article) {
-      window.open('/article/' + article.id + '.html', '_blank')
+      window.open('/' + article.id + '.html', '_blank')
     },
     handleCategoryChage (item, index) {
       if (item == null) {

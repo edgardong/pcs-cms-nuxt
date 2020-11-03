@@ -25,7 +25,7 @@
         相关文章
       </div>
       <div class="hotContent">
-        <nuxt-link v-for="li in relevant" :key="li.id" class="article" :to="`/article/${li.id}.html`">
+        <nuxt-link v-for="li in relevant" :key="li.id" class="article" :to="`/${li.id}.html`">
           <a-tooltip :title="li.title">
             {{ li.title }}
           </a-tooltip>
@@ -38,7 +38,7 @@
         最近文章
       </div>
       <div class="hotContent">
-        <nuxt-link v-for="li in latest" :key="li.id" class="article" :to="`/article/${li.id}.html`">
+        <nuxt-link v-for="li in latest" :key="li.id" class="article" :to="`/${li.id}.html`">
           <a-tooltip :title="li.title">
             {{ li.title }}
           </a-tooltip>
@@ -51,7 +51,7 @@
         热门文章
       </div>
       <div class="hotContent">
-        <nuxt-link v-for="li in hot" :key="li.id" class="article" :to="`/article/${li.id}.html`">
+        <nuxt-link v-for="li in hot" :key="li.id" class="article" :to="`/${li.id}.html`">
           <a-tooltip :title="li.title">
             {{ li.title }}
           </a-tooltip>
