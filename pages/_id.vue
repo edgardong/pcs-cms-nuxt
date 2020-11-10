@@ -58,17 +58,14 @@ export default {
     store.commit('setBase', baseData.data.data)
   },
   validate ({ params, query }) {
-    // console.log(this, params, query)
     return true // 如果参数有效
   },
   mounted () {
-    // console.log('mounted', this.$route.params)
     this.id = this.$route.params.id
     this.getArticle(this.id)
   },
   methods: {
     handleMenuClick (menu) {
-      // console.log('我回来了', menu)
       // this.$refs.scrollWarpper.scrollTo(menu.top, 0)
       window.scrollTo(0, menu.top + 24)
       // window.scrollTo(0, document.documentElement.clientHeight)
@@ -81,7 +78,6 @@ export default {
         `${config.BASE_URL}api/blog/v1/article/${id}`
       )
       this.article = data
-      console.log('文章数据', data)
       // Actual default values
       if (data.content_type === 2) {
         const md = require('markdown-it')({
@@ -101,7 +97,6 @@ export default {
 
       const CATE = data.categorys.split(',').join(data.half_categorys.split(','))
       const index = Math.ceil(Math.random() * 10) % CATE.length
-      // console.log('...CATE', CATE, index, CATE[index])
       this.articleCategory = CATE[index]
       this.shwoSlide = true
       // 生成目录树
@@ -114,16 +109,13 @@ export default {
      * 生成文章目录树
      **/
     renderArticleMenu (content) {
-      const articleContent = this.$refs.article
-      console.log(articleContent)
+      // const articleContent = this.$refs.article
       const titles = document.querySelectorAll('h1,h2,h3,h4,h5,h6')
-      console.log(titles)
       if (titles.length === 0) {
         // return
       }
 
       titles.forEach((ti, index) => {
-        // console.log(ti.nodeName, ti.offsetTop, ti.clientHeight)
         const type = ti.nodeName.replace('H', '')
         this.menuList.push({
           title: ti.textContent,
@@ -132,8 +124,6 @@ export default {
           top: ti.offsetTop
         })
       })
-
-      // console.log(this.menuList)
     }
   }
 }

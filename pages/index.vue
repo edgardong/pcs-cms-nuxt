@@ -157,7 +157,6 @@ export default {
       } else {
         this.$store.commit('tag/setIndex', index)
         this.category = item.id || ''
-        console.log('category', item.id)
       }
 
       this.getCagtegoryList()
