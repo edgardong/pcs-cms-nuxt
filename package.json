@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
     "build": "nuxt build",
-    "pm2": "cross-env pm2 start server.json",
+    "pm2": "cross-env pm2 --name vueblog start server.json",
     "pm2:dev": "pm2 start npm --name blog -- run dev",
     "start": "cross-env NODE_ENV=production node server/index.js",
     "g": "nuxt generate",
