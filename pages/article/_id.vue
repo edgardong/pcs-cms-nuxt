@@ -10,8 +10,8 @@
 
 <script>
 import axios from 'axios'
-import config from '~/config'
 import hljs from 'highlight.js'
+import config from '~/config'
 import '~/assets/markdown.css'
 // import 'highlight.js/styles/default.css'
 import WecSlider from '~/components/WecSlider'

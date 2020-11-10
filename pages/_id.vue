@@ -78,7 +78,7 @@ export default {
      **/
     async getArticle (id) {
       const { data } = await axios.get(
-          `${config.BASE_URL}api/blog/v1/article/${id}`
+        `${config.BASE_URL}api/blog/v1/article/${id}`
       )
       this.article = data
       console.log('文章数据', data)
