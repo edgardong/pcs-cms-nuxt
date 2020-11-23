@@ -51,7 +51,7 @@
           </a>
         </a-menu-item>
         <a-menu-item key="about">
-          <a href="/about">
+          <a href="/about.html">
             <a-icon type="deployment-unit" />关于
           </a>
         </a-menu-item>
