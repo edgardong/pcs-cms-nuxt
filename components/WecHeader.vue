@@ -134,6 +134,6 @@ export default {
   width: 90px;
   height: 30px;
   cursor: pointer;
-  max-width: auto;
+  max-width: 90px;
 }
 </style>
