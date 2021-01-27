@@ -12,7 +12,7 @@
           </nuxt-link>
         </a-menu-item>
         <a-menu-item key="feeling">
-          <nuxt-link to="/test">
+          <nuxt-link to="/essay">
             <a-icon type="smile" />随笔
           </nuxt-link>
         </a-menu-item>
