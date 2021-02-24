@@ -44,10 +44,21 @@
         </div>
       </div>
     </div>
+
   </div>
 </template>
 <script>
+import axios from 'axios'
+import config from '~/config'
 export default {
+  async fetch ({ store, params }) {
+    store.dispatch('article/getArticleList')
+    // 获取网站基本信息
+    const baseData = await axios.get(
+      `${config.BASE_URL}api/blog/v1/base/base`
+    )
+    store.commit('setBase', baseData.data.data)
+  },
   data () {
     return {}
   },
@@ -64,7 +75,7 @@ export default {
   height: 450px;
   margin: 20px auto;
   overflow: hidden;
-  background: linear-gradient(
+  /* background: linear-gradient(
     to right,
     rgba(255, 0, 0,1),
     rgba(255, 165, 0,1),
@@ -73,7 +84,7 @@ export default {
     rgba(0, 127, 255,1),
     rgba(0, 0, 255,1),
     rgba(139, 0, 255,1)
-  );
+  ); */
 }
 
 .box .item {
@@ -84,6 +95,7 @@ export default {
   text-align: center;
   color: #fff;
   font-size: 50px;
+  cursor: pointer;
   /* border-right: 1px solid black; */
 }
 .content {
@@ -122,6 +134,8 @@ export default {
     rgb(255, 0, 0),
     rgb(255, 165, 0)
   ); */
+  /* background: rgb(52, 152, 219); */
+  background: #00d2ff;
 }
 .item2 {
   /* background: linear-gradient(
@@ -129,6 +143,8 @@ export default {
     rgb(255, 165, 0),
     rgb(255, 255, 0)
   ); */
+  /* background: rgb(34, 167, 240); */
+  background: #00bfff;
 }
 .item3 {
   /* background: linear-gradient(
@@ -136,6 +152,8 @@ export default {
     rgb(255, 255, 0),
     rgb(0, 255, 0)
   ); */
+  /* background: rgb(197, 239, 247); */
+  background: #00acff;
 }
 .item4 {
   /* background: linear-gradient(
@@ -143,6 +161,8 @@ export default {
     rgb(0, 255, 0),
     rgb(0, 127, 255)
   ); */
+  /* background: rgb(82, 179, 217); */
+  background: #0099ff;
 }
 .item5 {
   /* background: linear-gradient(
@@ -150,6 +170,8 @@ export default {
     rgb(0, 127, 255),
     rgb(0, 0, 255)
   ); */
+  /* background: rgb(129, 207, 224); */
+  background: #0086ff;
 }
 .item6 {
   /* background: linear-gradient(
@@ -157,8 +179,12 @@ export default {
     rgb(0, 0, 255),
     rgb(139, 0, 255)
   ); */
+  /* background: rgb(89, 171, 227); */
+  background: #0073ff;
 }
 .item7 {
   /* background: rgb(139, 0, 255); */
+  /* background: rgb(137, 196, 244); */
+  background: #0060ff;
 }
 </style>

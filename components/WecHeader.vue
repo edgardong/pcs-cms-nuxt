@@ -17,7 +17,7 @@
           </nuxt-link>
         </a-menu-item>
         <a-menu-item key="album">
-          <a-icon type="instagram" theme="filled" />相册
+          <a-icon type="instagram" theme="filled" />生活
         </a-menu-item>
         <a-sub-menu>
           <span slot="title" class="submenu-title-wrapper">
@@ -43,7 +43,9 @@
           </a-menu-item-group>
         </a-sub-menu>
         <a-menu-item key="sharing">
-          <a-icon type="share-alt" />分享
+          <nuxt-link to="/share">
+            <a-icon type="share-alt" />分享
+          </nuxt-link>
         </a-menu-item>
         <a-menu-item key="tools">
           <a href="http://tools.quzhaota.cn/" target="_blank">

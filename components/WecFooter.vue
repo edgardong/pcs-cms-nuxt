@@ -1,19 +1,25 @@
 <template>
   <div class="wec-footer">
-    <p class="footer-content" v-html="$store.state.base.footer" />
+    <p class="footer-content" v-html="footerContent" />
     <div class="bg-cover" />
   </div>
 </template>
 <script>
+
 export default {
   data () {
-    return {}
+    return {
+      footerContent: ''
+    }
   },
   computed: {},
   mounted () {
     const base = this.$store.state.base
+    if (base) {
+      this.footerContent = base.footer
+    }
     // 百度统计代码
-    if (base && base.baidu_tongji) {
+    if (base && base.baidu_tongji && location.hostname !== 'localhost') {
       const hm = document.createElement('script')
       hm.src = `https://hm.baidu.com/hm.js?${base.baidu_tongji}`
       const s = document.getElementsByTagName('script')[0]
