@@ -46,7 +46,8 @@ export default {
   z-index: 3;
   font-size: 14px;
   white-space: pre-wrap;
-  margin: 8px 0 0 0;
+  margin: 8px auto 0 auto;
+  max-width: 960px;
 }
 .bg-cover {
   position: absolute;

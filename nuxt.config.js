@@ -23,7 +23,13 @@ module.exports = {
         type: 'text/javascript',
         src: 'https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?lang=css&amp;skin=sunburst',
         async: true
-      }
+      },
+      {
+        type: 'text/javascript',
+        src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
+        'data-ad-client': 'ca-pub-1281636234953066',
+        async: true
+     }
     ]
   },
   /*

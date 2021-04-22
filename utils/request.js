@@ -2,8 +2,6 @@ import axios from 'axios'
 
 import config from '../config'
 
-console.log('...', config)
-
 const instance = axios.create({
   baseUrl: config.BASE_URL
 })

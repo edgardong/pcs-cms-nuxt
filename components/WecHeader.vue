@@ -17,21 +17,20 @@
           </nuxt-link>
         </a-menu-item>
         <a-menu-item key="album">
-          <a-icon type="instagram" theme="filled" />生活
+          <nuxt-link to="/life">
+            <a-icon type="instagram" theme="filled" />生活
+          </nuxt-link>
         </a-menu-item>
         <a-sub-menu>
           <span slot="title" class="submenu-title-wrapper">
             <a-icon type="pushpin" />作品
           </span>
-          <a-menu-item-group title="APP">
             <a-menu-item key="rn-store">
               <a-icon type="android" theme="filled" />破冰商城
             </a-menu-item>
             <a-menu-item key="rn-poker">
               <a-icon type="android" theme="filled" />破壳
             </a-menu-item>
-          </a-menu-item-group>
-          <a-menu-item-group title="WebApp">
             <a-menu-item key="mini-store">
               <a-icon type="wechat" theme="filled" />商城小程序
             </a-menu-item>
@@ -40,7 +39,11 @@
                 <a-icon type="chrome" theme="filled" />WECUI
               </a>
             </a-menu-item>
-          </a-menu-item-group>
+            <a-menu-item key="web-wecui">
+              <a href="/more">
+                <a-icon type="wechat" theme="filled" />更多作品
+              </a>
+            </a-menu-item>
         </a-sub-menu>
         <a-menu-item key="sharing">
           <nuxt-link to="/share">
@@ -53,7 +56,7 @@
           </a>
         </a-menu-item>
         <a-menu-item key="about">
-          <a href="/about.html">
+          <a href="/about">
             <a-icon type="deployment-unit" />关于
           </a>
         </a-menu-item>
