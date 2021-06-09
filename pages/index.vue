@@ -47,7 +47,7 @@
             <span class="time">{{ article.create_time }}</span>
             <span class="author">
               <a-icon type="user" />
-              {{ article.author||'不再做书生' }}
+              {{ article.author||'易书生' }}
             </span>
             <span class="read_count">
               <a-icon type="eye" />
