@@ -280,7 +280,7 @@ export default {
   letter-spacing: 2px;
   font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
   background: linear-gradient(to right, #26a65b, #0099ff, #00ccff);
-  -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
 }
 </style>

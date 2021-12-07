@@ -74,7 +74,8 @@ module.exports = {
   },
   proxy: {
     '/api': {
-      target: 'http://localhost:8000', // 代理地址
+      // target: 'http://localhost:8000', // 代理地址
+      target: 'https://api.quzhaota.cn/', // 代理地址
       changeOrigin: true,
       pathRewrite: {
         '^/api': '/api'

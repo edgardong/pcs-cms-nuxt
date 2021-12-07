@@ -2,10 +2,27 @@
   <div class="wec-footer">
     <p class="footer-content" v-html="footerContent" />
     <div class="bg-cover" />
+
+    <!-- Clarity tracking code for https://www.quzhaota.cn/ -->
+    <script>
+  /* eslint-disable */
+  (function (c, l, a, r, i, t, y) {
+    c[a] =
+      c[a] ||
+      function () {
+        (c[a].q = c[a].q || []).push(arguments);
+      };
+    t = l.createElement(r);
+    t.async = 1;
+    t.src = "https://www.clarity.ms/tag/" + i + "?ref=bwt";
+    y = l.getElementsByTagName(r)[0];
+    y.parentNode.insertBefore(t, y);
+  })(window, document, "clarity", "script", "71dd1y9nn9");
+  /* eslint-enable */
+    </script>
   </div>
 </template>
 <script>
-
 export default {
   data () {
     return {
@@ -14,6 +31,7 @@ export default {
   },
   computed: {},
   mounted () {
+    /* eslint-enable */
     const base = this.$store.state.base
     if (base) {
       this.footerContent = base.footer
@@ -25,6 +43,7 @@ export default {
       const s = document.getElementsByTagName('script')[0]
       s.parentNode.insertBefore(hm, s)
     }
+    /* eslint-enable */
   },
   methods: {}
 }
@@ -57,7 +76,7 @@ export default {
   bottom: 0;
   opacity: 0.15;
   z-index: 2;
-  background-image: url('../assets/imgs/footer_bg.jpg');
+  background-image: url("../assets/imgs/footer_bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

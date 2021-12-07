@@ -28,6 +28,7 @@ export const actions = {
     const { data } = await axios.get(
       `${config.BASE_URL}api/blog/v1/article/pagination`, { params }
     )
+    console.log(data)
     commit('setArticle', data.data)
   }
 }
