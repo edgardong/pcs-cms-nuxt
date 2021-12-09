@@ -1,2 +1,0 @@
-exports.ids=[2],exports.modules={136:function(t,e,r){"use strict";r.r(e);var n={name:"About",layout:"",data:()=>({})},o=r(1);var component=Object(o.a)(n,(function(){var t=this.$createElement;return(this._self._c||t)("div",[this._ssrNode("关于页面")])}),[],!1,(function(t){}),null,"7bef75d9");e.default=component.exports}};
-//# sourceMappingURL=565f7c3e4916cf6b3676.js.map
