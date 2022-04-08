@@ -7,6 +7,23 @@
 </template>
 <script>
 export default {
+  head () {
+    const base = this.$store.state.base
+    return {
+      title: `${base.name}${base.split || '-'}${base.title}`,
+      meta: [
+        { hid: 'keywords', name: 'keywords', content: base.keywords },
+        { hid: 'description', name: 'description', content: base.description }
+      ],
+      link: [
+        {
+          rel: 'icon',
+          type: 'image/x-icon',
+          href: base.ico
+        }
+      ]
+    }
+  },
   data () {
     return {}
   },

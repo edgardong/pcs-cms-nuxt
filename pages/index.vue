@@ -174,7 +174,7 @@ export default {
 .sub-header {
   background-color: #fff;
   position: fixed;
-  top: 60px;
+  top: 59px;
   left: 0;
   right: 0;
   z-index: 999;

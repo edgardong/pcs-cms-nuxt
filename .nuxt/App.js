@@ -15,7 +15,7 @@ import _6f6c098b from '../layouts/default.vue'
 const layouts = { "_blog-content": _cb805f78,"_blog-feeling": _275fa447,"_blog-header": _bcd7bd3c,"_blog-pages": _4749fb62,"_default": _6f6c098b }
 
 export default {
-  head: {"title":"wecblog-vue","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"前沿技术网，专注于探寻web前端开发技术。探索和分享各种web前端及前端开发中的技术，解决web前端开发中遇到的各种问题，努力为大家打造一个良好的web前端开发的技术交流探讨及分享平台。"}],"script":[{"type":"text\u002Fjavascript","src":"https:\u002F\u002Fcdn.jsdelivr.net\u002Fgh\u002Fgoogle\u002Fcode-prettify@master\u002Floader\u002Frun_prettify.js?lang=css&amp;skin=sunburst","async":true},{"type":"text\u002Fjavascript","src":"https:\u002F\u002Fpagead2.googlesyndication.com\u002Fpagead\u002Fjs\u002Fadsbygoogle.js","data-ad-client":"ca-pub-1281636234953066","async":true}],"link":[],"style":[]},
+  head: {"title":"wecblog-vue","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""}],"script":[{"type":"text\u002Fjavascript","src":"https:\u002F\u002Fcdn.jsdelivr.net\u002Fgh\u002Fgoogle\u002Fcode-prettify@master\u002Floader\u002Frun_prettify.js?lang=css&amp;skin=sunburst","async":true},{"type":"text\u002Fjavascript","src":"https:\u002F\u002Fpagead2.googlesyndication.com\u002Fpagead\u002Fjs\u002Fadsbygoogle.js","data-ad-client":"ca-pub-1281636234953066","async":true}],"link":[],"style":[]},
 
   render(h, props) {
     const loadingEl = h('NuxtLoading', { ref: 'loading' })
