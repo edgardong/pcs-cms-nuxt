@@ -31,7 +31,7 @@
     "highlight.js": "^9.15.10",
     "koa": "^2.6.2",
     "markdown-it": "^10.0.0",
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.15.8"
   },
   "devDependencies": {
     "@nuxtjs/axios": "^5.6.0",
